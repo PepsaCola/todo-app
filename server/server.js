@@ -13,12 +13,19 @@ const PORT = 5000;
 const SECRET_KEY = process.env.JWT_SECRET || "super_secret_key";
 
 // Middleware
-app.use(cors());
+const corsOptions = {
+    origin: "*", // Або вкажіть конкретний домен замість "*"
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+};
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 const getData = () => JSON.parse(fs.readFileSync("db.json", "utf8"));
 const saveData = (data) => fs.writeFileSync("db.json", JSON.stringify(data, null, 2));
-
+app.get("/", (req, res) => {
+    res.status(201).json({ message: "Все працює" });
+})
 app.post("/users/add", async (req, res) => {
     try {
         const data = getData();
@@ -311,6 +318,6 @@ app.put("/task/:boardId/:columnId/:toColumnId/:taskId", (req, res) => {
 
 
 // Запуск сервера
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Server is running on http://0.0.0.0:${PORT}`);
 });

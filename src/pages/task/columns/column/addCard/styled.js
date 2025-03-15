@@ -25,24 +25,30 @@ export const InpDescription = styled.textarea`
     }
 `
 
-export const ColorOption = styled.input.attrs({ type: "radio" })`
-  appearance: none;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: 0.3s ease-in-out;
-  
-  &:nth-child(1) { background-color: #8FA1D0; }  
-  &:nth-child(2) { background-color: #E09CB5; }  
-  &:nth-child(3) { background-color: #BEDBB0; }  
-  &:nth-child(4) { background-color: rgba(255, 255, 255, 0.30); }      /* Сірий */
+const getColor = (value) => {
+    switch(value) {
+        case "Low": return "#8FA1D0";
+        case "Medium": return "#E09CB5";
+        case "High": return "#BEDBB0";
+        case "Without": return "rgba(255, 255, 255, 0.30)";
+        default: return "transparent";
+    }
+};
 
-  &:checked {
-    border: 2px solid white;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
-  }
+export const ColorOption = styled.input.attrs({ type: "radio" })`
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.3s ease-in-out;
+    background-color: ${({ value }) => getColor(value)};
+
+    &:checked {
+        border: 2px solid white;
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    }
 `;
 
 export const LabelContainer = styled.div`

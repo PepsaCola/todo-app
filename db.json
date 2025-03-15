@@ -21,9 +21,9 @@
       "boards": [
         {
           "id": "m84cog7l",
-          "name": "Week",
-          "icon": "icon-1",
-          "img": "photo-2",
+          "name": "week",
+          "icon": "icon-3",
+          "img": "photo-11",
           "columns": [
             {
               "id": "m84copew",
@@ -71,25 +71,18 @@
                   "description": "Лекція"
                 },
                 {
-                  "id": "m84csa8y",
-                  "title": "Моделювання технічних систем",
-                  "deadline": "18.03.2025",
-                  "priority": "Low",
-                  "description": "Лекція"
-                },
-                {
-                  "id": "m84csly1",
-                  "title": "Комп'ютерна електроніка та мікропроцесорні системи",
-                  "deadline": "18.03.2025",
-                  "priority": "Low",
-                  "description": "Лекція"
-                },
-                {
                   "id": "m84ctj1t",
                   "title": "Основи розробки програмного забезпечення на платформі Microsoft.NET",
                   "deadline": "18.03.2025",
                   "priority": "High",
                   "description": "Лабораторна"
+                },
+                {
+                  "id": "m8acu4md",
+                  "title": "123",
+                  "deadline": "27.03.2025",
+                  "priority": "Medium",
+                  "description": "123"
                 }
               ]
             },
@@ -99,6 +92,13 @@
               "tasks": []
             }
           ]
+        },
+        {
+          "id": "m8aefazu",
+          "name": "nextWeek",
+          "icon": "icon-2",
+          "img": "photo-7",
+          "columns": []
         }
       ]
     },

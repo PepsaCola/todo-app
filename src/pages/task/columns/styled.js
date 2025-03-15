@@ -3,6 +3,7 @@ import { ReactComponent as PIcon } from "../../../img/plus.svg";
 
 
 export const List = styled.ul`
+    
     height: 100%;
 display: flex;
     gap: 18px;

@@ -200,9 +200,13 @@ const authSlice = createSlice({
         accessToken: accessToken || null,
         user: null,
         isLoading: false,
-        error: null
+        error: null,
+        filter:''
     },
     reducers: {
+        setFilter: (state, action) => {
+          state.filter = action.payload;
+        },
         logout: (state) => {
             localStorage.removeItem("access_token");
             state.accessToken = null;
@@ -429,5 +433,5 @@ const authSlice = createSlice({
     }
 });
 
-export const { logout } = authSlice.actions;
+export const { logout,setFilter } = authSlice.actions;
 export const authReducer =  authSlice.reducer;

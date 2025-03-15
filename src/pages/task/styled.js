@@ -1,6 +1,39 @@
 import styled from "styled-components";
 import { ReactComponent as FIcon } from "../../img/filter.svg";
 
+import photo1 from "../../img/desktop/photo-1.png";
+import photo2 from "../../img/desktop/photo-2.png";
+import photo3 from "../../img/desktop/photo-3.png";
+import photo4 from "../../img/desktop/photo-4.png";
+import photo5 from "../../img/desktop/photo-5.png";
+import photo6 from "../../img/desktop/photo-6.png";
+import photo7 from "../../img/desktop/photo-7.png";
+import photo8 from "../../img/desktop/photo-8.png";
+import photo9 from "../../img/desktop/photo-9.png";
+import photo10 from "../../img/desktop/photo-10.png";
+import photo11 from "../../img/desktop/photo-11.png";
+import photo12 from "../../img/desktop/photo-12.png";
+import photo13 from "../../img/desktop/photo-13.png";
+import photo14 from "../../img/desktop/photo-14.png";
+import photo15 from "../../img/desktop/photo-15.png";
+
+export const backgrounds = {
+    "photo-1": photo1,
+    "photo-2": photo2,
+    "photo-3": photo3,
+    "photo-4": photo4,
+    "photo-5": photo5,
+    "photo-6": photo6,
+    "photo-7": photo7,
+    "photo-8": photo8,
+    "photo-9": photo9,
+    "photo-10": photo10,
+    "photo-11": photo11,
+    "photo-12": photo12,
+    "photo-13": photo13,
+    "photo-14": photo14,
+    "photo-15": photo15,
+};
 
 export const Container = styled.div`
 display: flex;
@@ -13,13 +46,16 @@ export const TaskWrap = styled.div`
     
 `
 export const ColumnsWrap = styled.div`
-    padding:  10px 24px;
+    padding: 10px 24px;
     display: flex;
     flex-direction: column;
-    background-color: #1F1F1F;
+    background-color: #1F1F1F; /* Базовий фон */
+    background-image: ${({ back }) => (back ? `url(${back})` : 'none')};
+    background-size: cover;
+    background-position: center;
     width: auto;
     flex-grow: 1;
-`
+`;
 export const TitleWrap = styled.div`
 display: flex;
 justify-content: space-between;
@@ -29,11 +65,44 @@ export const Title = styled.h3`
     font-size: 18px;
 `
 export const Filter = styled.p`
+    cursor: pointer;
 display: flex;
     gap: 8px;
     align-items: center;
     color: rgba(255, 255, 255, 0.80);
     font-size: 14px;
+`
+export const Label = styled.label`
+display: flex;
+    gap: 8px;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    color: ${({ checked }) => checked ? 'white' : 'rgba(255, 255, 255, 0.50)'};
+`
+export const LabelContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+`
+export const LabelText = styled.p`
+    color: white; 
+    font-size: 14px; 
+    font-weight: 500;
+`
+export const LabelWrap = styled.div`
+    display: flex;
+    justify-content: space-between;
+`
+export const LabelSpan = styled.span`
+    color: rgba(255, 255, 255, 0.50); 
+    font-size: 12px;
+    text-decoration: underline;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    &:hover {
+        color: white;
+    }
 `
 export const Message = styled.p``
 export const Icon = styled(FIcon)`

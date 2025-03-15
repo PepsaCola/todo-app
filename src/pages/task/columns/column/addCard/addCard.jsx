@@ -41,6 +41,7 @@ export const AddCard = ({ column }) => {
     };
     const handlePriorityChange = (e) => {
         setPriority(e.target.value);
+
     }
     const handleDateChange = (e) => {
         setDate(e);
