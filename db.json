@@ -1,0 +1,120 @@
+{
+  "users": [
+    {
+      "userId": "1",
+      "username": "Bob",
+      "email": "admin@gmail.com",
+      "password": "test",
+      "boards": [
+        {
+          "id": "123123",
+          "name": "Kiril",
+          "number": "123-321-456"
+        }
+      ]
+    },
+    {
+      "username": "meisterkiril",
+      "email": "kiril@gmail.com",
+      "password": "$2b$10$rVNORfDqpJt.fDmMrpc/WO9rQWlEDikzPfBoG0pSxph57eF4.W15W",
+      "userId": "m7dberh5",
+      "boards": [
+        {
+          "id": "m84cog7l",
+          "name": "Week",
+          "icon": "icon-1",
+          "img": "photo-2",
+          "columns": [
+            {
+              "id": "m84copew",
+              "name": "Monday",
+              "tasks": [
+                {
+                  "id": "m84cpd5s",
+                  "title": "Робототехнічні системи та комплекси",
+                  "deadline": "17.03.2025",
+                  "priority": "Low",
+                  "description": "Лекція"
+                },
+                {
+                  "id": "m84cpslt",
+                  "title": "Теорія і методи оптимізації",
+                  "deadline": "17.03.2025",
+                  "priority": "Low",
+                  "description": "Лекція"
+                },
+                {
+                  "id": "m84cqbxd",
+                  "title": "Теорія і методи оптимізації",
+                  "deadline": "17.03.2025",
+                  "priority": "Medium",
+                  "description": "Практика"
+                },
+                {
+                  "id": "m84cqqq1",
+                  "title": "Практичний курс іноземної мови",
+                  "deadline": "17.03.2025",
+                  "priority": "Medium",
+                  "description": "Практика"
+                }
+              ]
+            },
+            {
+              "id": "m84cr2vd",
+              "name": "Tuesday",
+              "tasks": [
+                {
+                  "id": "m84crobs",
+                  "title": "Основи розробки програмного забезпечення на платформі Microsoft.NET",
+                  "deadline": "18.03.2025",
+                  "priority": "Low",
+                  "description": "Лекція"
+                },
+                {
+                  "id": "m84csa8y",
+                  "title": "Моделювання технічних систем",
+                  "deadline": "18.03.2025",
+                  "priority": "Low",
+                  "description": "Лекція"
+                },
+                {
+                  "id": "m84csly1",
+                  "title": "Комп'ютерна електроніка та мікропроцесорні системи",
+                  "deadline": "18.03.2025",
+                  "priority": "Low",
+                  "description": "Лекція"
+                },
+                {
+                  "id": "m84ctj1t",
+                  "title": "Основи розробки програмного забезпечення на платформі Microsoft.NET",
+                  "deadline": "18.03.2025",
+                  "priority": "High",
+                  "description": "Лабораторна"
+                }
+              ]
+            },
+            {
+              "id": "m84cswi8",
+              "name": "Wensday",
+              "tasks": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "username": "kiril",
+      "email": "meysterkiril@gmail.com",
+      "password": "$2b$10$ghFAkrD7y/sRU9Lbj.pkLOZRdeCrUniC3umaLbb59wCYB7eb15dpm",
+      "userId": "m7dmwz41",
+      "boards": []
+    },
+    {
+      "username": "vlad",
+      "email": "vlad@gmail.com",
+      "password": "$2b$10$EQ4dyt3fV6A3uLzcuoLXBO.cl.kaeKHx/RroMw5W5WPFlhmK4yM9W",
+      "userId": "m7hkx29k",
+      "boards": []
+    }
+  ]
+}
