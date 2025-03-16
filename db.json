@@ -23,7 +23,7 @@
           "id": "m84cog7l",
           "name": "week",
           "icon": "icon-3",
-          "img": "photo-11",
+          "img": "photo-15",
           "columns": [
             {
               "id": "m84copew",
@@ -89,16 +89,45 @@
             {
               "id": "m84cswi8",
               "name": "Wensday",
-              "tasks": []
+              "tasks": [
+                {
+                  "id": "m8ap3o9j",
+                  "title": "123",
+                  "deadline": "27.03.2025",
+                  "priority": "Without",
+                  "description": "123"
+                },
+                {
+                  "id": "m8ap4rye",
+                  "title": "eqwe",
+                  "deadline": "15.03.2025",
+                  "priority": "High",
+                  "description": "qweasd"
+                },
+                {
+                  "id": "m8ap4vfq",
+                  "title": "qweqwesad",
+                  "deadline": "15.03.2025",
+                  "priority": "High",
+                  "description": "asdasdas"
+                },
+                {
+                  "id": "m8ap4yw6",
+                  "title": "eqweqwe",
+                  "deadline": "15.03.2025",
+                  "priority": "Without",
+                  "description": "asddadas"
+                },
+                {
+                  "id": "m8ap51xx",
+                  "title": "qweqweasdas",
+                  "deadline": "15.03.2025",
+                  "priority": "Medium",
+                  "description": "asdadasd"
+                }
+              ]
             }
           ]
-        },
-        {
-          "id": "m8aefazu",
-          "name": "nextWeek",
-          "icon": "icon-2",
-          "img": "photo-7",
-          "columns": []
         }
       ]
     },
