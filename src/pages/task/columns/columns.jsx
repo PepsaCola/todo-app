@@ -30,14 +30,13 @@ export const Columns = ()=>{
         setOpen(false)
         setTitle("");
     }
-    const handleSubmit = (e) => {
+    const handleSubmit = (e,close) => {
         e.preventDefault()
         dispatch(addColumn({title,boardId:board.id}))
-        handleClose()
+        close()
     }
 
     return (
-        <>
             <List>
                 {board.columns && board.columns.map((item)=><Column key={item.id} column={item}/>)}
                 <ListItem>
@@ -49,14 +48,12 @@ export const Columns = ()=>{
                                     <CloseButton onClick={close} type='button'>&times;</CloseButton>
                                     <H3>Add column</H3>
                                     <InpTitle onChange={handleTitleChange} type="text" name="title" placeholder='Title' value={title}/>
-                                    <CreateButton onClick={handleSubmit} type='submit'><WPlus/> Create</CreateButton>
+                                    <CreateButton onClick={(e)=>handleSubmit(e,close)} type='submit'><WPlus/> Create</CreateButton>
                                 </CreatePopup>
                             </Back>
                         )}
                     </Popup>
                 </ListItem>
             </List>
-
-        </>
     )
 }

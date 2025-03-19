@@ -7,7 +7,7 @@ export const Container = styled.li`
 display: flex;
     flex-direction: column;
     gap: 14px;
-    width: 334px;
+    min-width: 334px;
     max-height: 100%;
     
 `
@@ -46,6 +46,8 @@ export const Btn = styled.button`
 `
 
 export const TitleWrap = styled.div`
+    max-width: 334px;
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     border-radius: 8px;
@@ -59,8 +61,7 @@ export const List = styled.ul`
     gap: 8px;
     overflow-y: auto;
     flex-grow: 1;
-    min-height: 0;
-    max-height: 641px;
+    height: 100%;
 
     /* Firefox */
     scrollbar-color: #121212 rgba(255, 255, 255, 0.1);
@@ -91,6 +92,11 @@ export const List = styled.ul`
 
 
 export const Title = styled.h2`
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* Обмежуємо до 2 рядків */
+    -webkit-box-orient: vertical;
     font-size: 14px;`
 
 export const Icon = styled(PlIcon)`

@@ -60,11 +60,11 @@ export const AddCard = ({ column }) => {
         const year = date.getFullYear();
         return `${day}.${month}.${year}`;
     };
-    const handleSubmit = (e) => {
+    const handleSubmit = (e,close) => {
         e.preventDefault();
         const formattedDate = formatDate(date);
         dispatch(addTask({ title,description, boardId: board.id, columnId: column.id, date: formattedDate, priority }));
-        handleClose();
+        close();
     };
 
     return (
@@ -128,7 +128,7 @@ export const AddCard = ({ column }) => {
                             </div>
                         )}
 
-                        <CreateButton onClick={handleSubmit} type="submit">
+                        <CreateButton onClick={(e)=>handleSubmit(e,close)} type="submit">
                             <WPlus /> Add
                         </CreateButton>
                     </CreatePopup>

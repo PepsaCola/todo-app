@@ -46,10 +46,10 @@ export const Create = ()=>{
         setSelectedImg("");
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e,close) => {
         e.preventDefault();
         dispatch(addBoard({title, selectedIcon, selectedImg}))
-        handleClose()
+        close()
     }
 
     return (
@@ -86,7 +86,7 @@ export const Create = ()=>{
                                     ))}
                                 </List>
                             </Wrap>
-                            <CreateButton onClick={handleSubmit} type='submit'><WPlus/> Create</CreateButton>
+                            <CreateButton onClick={(e)=>handleSubmit(e,close)} type='submit'><WPlus/> Create</CreateButton>
                         </CreatePopup>
                     </Back>
                     )}

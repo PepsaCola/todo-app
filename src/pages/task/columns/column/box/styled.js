@@ -30,7 +30,11 @@ export const Container = styled.li`
 export const Title = styled.h3`
     font-size: 14px;
   font-weight: bold;
-  margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Обмежуємо до 2 рядків */
+    -webkit-box-orient: vertical;
 `;
 
 export const Description = styled.p`

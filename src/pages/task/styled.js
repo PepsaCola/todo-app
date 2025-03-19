@@ -46,6 +46,7 @@ export const TaskWrap = styled.div`
     
 `
 export const ColumnsWrap = styled.div`
+    height: 90vh;
     padding: 10px 24px;
     display: flex;
     flex-direction: column;
