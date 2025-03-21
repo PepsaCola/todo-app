@@ -4,18 +4,18 @@ import { ReactComponent as PIcon } from "../../../img/plus.svg";
 
 export const List = styled.ul`
     overflow-x: auto;
-    max-width: 1600px;
-    height: 100%;
-display: flex;
+    display: flex;
     gap: 18px;
+    flex-grow: 1;
+    width: 100%; /* Або конкретне значення, наприклад 1600px */
     scrollbar-color: #121212 rgba(255, 255, 255, 0.1);
     scrollbar-width: thin;
-`
+`;
 export const ListItem = styled.li`
     width: 334px;
+    flex-shrink: 0;
 `
 export const Btn = styled.button`
-    
     border-radius: 8px;
     font-size: 14px;
     display: flex;

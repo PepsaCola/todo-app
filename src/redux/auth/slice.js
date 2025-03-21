@@ -6,10 +6,6 @@ const API_URL = 'http://localhost:3000';
 
 const accessToken = localStorage.getItem("access_token");
 
-let num = false
-num = 3
-
-
 export const loginUser = createAsyncThunk("auth/login", async ({ email, password }, { rejectWithValue }) => {
     try {
         const response = await axios.post(`${API_URL}/login`, { email, password });

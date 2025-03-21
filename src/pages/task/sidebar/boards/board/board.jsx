@@ -1,4 +1,4 @@
-import { Container, DeleteIcon, Text, IconsWrap, PenIcon } from "./styled";
+import {Container, DeleteIcon, Text, IconsWrap, PenIcon, NameWrap} from "./styled";
 import { useDispatch } from "react-redux";
 import icons, {
     Back,
@@ -73,10 +73,13 @@ export const Board = ({ item, checked, onSelect }) => {
 
     return (
         <Container checked={checked}>
-            <Text checked={checked} to={item.id} onClick={onSelect}>
+            <NameWrap>
                 <SelectedIcon />
+                <Text checked={checked} to={item.id} onClick={onSelect}>
                 {item.name}
-            </Text>
+                </Text>
+            </NameWrap>
+
             {checked && (
                 <IconsWrap>
                     <Popup

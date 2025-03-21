@@ -37,25 +37,27 @@ export const backgrounds = {
 
 export const Container = styled.div`
 display: flex;
-
+    
+    height: 100vh;
 `
 export const TaskWrap = styled.div`
     display: flex;
     flex-direction: column;
-    width: 100%;
-    
+    //width: 100%;
+    width:calc(100% - 260px);
 `
 export const ColumnsWrap = styled.div`
-    height: 90vh;
+    flex-grow: 1;
     padding: 10px 24px;
+    
     display: flex;
     flex-direction: column;
     background-color: #1F1F1F; /* Базовий фон */
     background-image: ${({ back }) => (back ? `url(${back})` : 'none')};
     background-size: cover;
     background-position: center;
-    width: auto;
-    flex-grow: 1;
+    overflow-x: auto;
+    overflow-y: hidden;
 `;
 export const TitleWrap = styled.div`
 display: flex;

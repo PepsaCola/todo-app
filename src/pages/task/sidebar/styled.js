@@ -6,11 +6,11 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 260px;
+    max-width: 260px;
     background-color: #121212;
-    height: 100vh;
-    
     box-sizing: border-box;
+    //height: 100vh;
+    
 `
 
 export const Title = styled.h2`

@@ -8,8 +8,6 @@ display: flex;
     flex-direction: column;
     gap: 14px;
     min-width: 334px;
-    max-height: 100%;
-    
 `
 export const IconsWrap = styled.div`
 display: flex;
@@ -89,7 +87,6 @@ export const List = styled.ul`
 
    
 `;
-
 
 export const Title = styled.h2`
     overflow: hidden;

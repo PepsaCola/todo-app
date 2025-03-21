@@ -29,7 +29,7 @@ export const AddCard = ({ column }) => {
     const [open, setOpen] = useState(false);
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
-    const [priority, setPriority] = useState("");
+    const [priority, setPriority] = useState("Low");
     const [date, setDate] = useState(new Date());
     const [showCalendar, setShowCalendar] = useState(false);
 
@@ -50,7 +50,7 @@ export const AddCard = ({ column }) => {
         setOpen(false);
         setTitle("");
         setDescription("");
-        setPriority("");
+        setPriority("Low");
         setDate(new Date())
         setShowCalendar(false);
     };
@@ -95,9 +95,9 @@ export const AddCard = ({ column }) => {
                         />
 
                         <label htmlFor="priority">
-                            <LabelText>Label color</LabelText>
+                            <LabelText>Priority</LabelText>
                             <LabelContainer>
-                                <ColorOption onChange={handlePriorityChange} checked={priority === "Low"} name="priority" value="Low" />
+                                <ColorOption onChange={handlePriorityChange} checked={priority === "Low"} name="priority" value="Low"  />
                                 <ColorOption onChange={handlePriorityChange} checked={priority === "Medium"} name="priority" value="Medium" />
                                 <ColorOption onChange={handlePriorityChange} checked={priority === "High"} name="priority" value="High" />
                                 <ColorOption onChange={handlePriorityChange} checked={priority === "Without"} name="priority" value="Without" />

@@ -36,6 +36,8 @@ export const Columns = ()=>{
         close()
     }
 
+    console.log(window.outerWidth);
+
     return (
             <List>
                 {board.columns && board.columns.map((item)=><Column key={item.id} column={item}/>)}
