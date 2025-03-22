@@ -2,7 +2,7 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import axios from "axios";
 import uniqid from "uniqid";
 
-const API_URL = 'https://to-do-server-xi.vercel.app/';
+const API_URL = 'https://to-do-server-xi.vercel.app';
 
 const accessToken = localStorage.getItem("access_token");
 
