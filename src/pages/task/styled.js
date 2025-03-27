@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ReactComponent as FIcon } from "../../img/filter.svg";
+import { ReactComponent as MIcon } from "../../img/menu.svg";
 
 import photo1 from "../../img/desktop/photo-1.png";
 import photo2 from "../../img/desktop/photo-2.png";
@@ -35,20 +36,33 @@ export const backgrounds = {
     "photo-15": photo15,
 };
 
+export const MenuIcon = styled(MIcon)`
+    width: 32px;
+    height: 32px;
+    margin-right: auto;
+    cursor: pointer;
+    @media screen and (min-width: 1440px){
+        display: none;
+    }
+`
+
 export const Container = styled.div`
 display: flex;
-    
     height: 100vh;
+        position: relative;
+    
 `
 export const TaskWrap = styled.div`
     display: flex;
     flex-direction: column;
-    //width: 100%;
-    width:calc(100% - 260px);
+    width: 100%;
+    @media screen and (min-width: 1440px){
+        width:calc(100% - 260px);
+    }
 `
 export const ColumnsWrap = styled.div`
     flex-grow: 1;
-    padding: 10px 24px;
+    padding: 14px 20px;
     
     display: flex;
     flex-direction: column;
@@ -58,6 +72,9 @@ export const ColumnsWrap = styled.div`
     background-position: center;
     overflow-x: auto;
     overflow-y: hidden;
+    @media screen and (min-width: 1440px){
+        padding: 10px 24px;
+    }
 `;
 export const TitleWrap = styled.div`
 display: flex;

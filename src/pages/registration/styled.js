@@ -11,13 +11,17 @@ export const Container = styled.div`
     background: linear-gradient(to bottom, #ffffff, #BEDBB0);`
 export const FormWrapper = styled.form`
     background-color: #151515 ;
-    padding: 40px;
+    padding: 24px;
     border-radius: 8px;
-    width: 424px;
+    width: 335px;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
     gap: 14px;
-    
+    @media screen and (min-width: 768px){
+        width: 424px;
+        padding: 40px;
+    }
 `
 export const Tabs = styled.div`
 display: flex;
@@ -46,7 +50,7 @@ export const Input = styled.input`
     border: 1px #BEDBB0 solid;
     font-size: 14px;
     color: white;
-    
+    box-sizing: border-box;
     &::placeholder {
         color: white; 
         font-size: 14px;

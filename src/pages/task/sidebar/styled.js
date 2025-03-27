@@ -9,8 +9,47 @@ export const Container = styled.div`
     max-width: 260px;
     background-color: #121212;
     box-sizing: border-box;
-    //height: 100vh;
+    position: absolute;
+    z-index: 10;
+    left: -100%;
+    transition: left 0.3s ease-in-out;
+    &.open {
+        left: 0;
+    }
+    height: 100vh;
+    scrollbar-color: #121212 rgba(255, 255, 255, 0.1);
+    scrollbar-width: thin;
     
+
+    @media screen and (min-width: 1440px) {
+        
+        position: relative;
+        left: 0;
+    }
+
+    
+`
+
+export const Back = styled.div`
+    width: 100%;
+    height: 100%;
+    background-color: rgba(21, 21, 21, 0.5);
+    z-index: 9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    @media screen and (min-width: 1440px) {
+        display: none;
+    }
 `
 
 export const Title = styled.h2`
@@ -60,4 +99,5 @@ export const TopDiv = styled.div`
 padding: 24px;
 `
 export const BottomDiv = styled.div`
+    margin-top: auto;
     padding: 24px;`

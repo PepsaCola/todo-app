@@ -3,7 +3,8 @@ import {Outlet, useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {fetchProfile, logout, setFilter} from "../../redux/auth/slice";
 import {Sidebar} from "./sidebar/sidebar";
-import {backgrounds,
+import {
+    backgrounds,
     ColumnsWrap,
     Container,
     Filter,
@@ -34,6 +35,10 @@ export const Task = () => {
 
     const [open, setOpen] = useState(false)
     const [priority, setPriority] = useState(filter);
+
+    const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+    const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
     const handleClose = ()=>{
         setOpen(false)
     }
@@ -70,9 +75,10 @@ export const Task = () => {
 
     if (user) {
         return <Container>
-            <Sidebar boards={user.boards} handleLogout={handleLogout}></Sidebar>
+            <Sidebar boards={user.boards} handleLogout={handleLogout} isOpen={isSidebarOpen} toggleSidebar={toggleSidebar}/>
             <TaskWrap>
-                <Header/>
+                <Header toggleSidebar={toggleSidebar}/>
+
                     <ColumnsWrap back={selectedBackground}>
                         <TitleWrap>
                             {boardId&&<Title>{curBoard.name}</Title>}

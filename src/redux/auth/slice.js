@@ -2,7 +2,7 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import axios from "axios";
 import uniqid from "uniqid";
 
-const API_URL = 'https://to-do-server-xi.vercel.app';
+const API_URL = 'https://to-do-server-xi.vercel.app/';
 
 const accessToken = localStorage.getItem("access_token");
 
@@ -194,6 +194,22 @@ export const rotateTask = createAsyncThunk("auth/rotateTask", async ({itemId, bo
         return rejectWithValue(error.response?.data || error.message);
     }
 })
+
+export const changeProfile = createAsyncThunk("auth/user/changeProfile", async ({newEmail,newPass,newName},{getState, rejectWithValue}) => {
+    try {
+        const token = getState().auth.accessToken;
+        const email = getState().auth.user.email;
+        await axios.put(`${API_URL}/user/${email}`,{newEmail,newPass,newName},{
+            headers: { Authorization: `Bearer ${token}` },
+        })
+        return {newEmail,newName};
+    }
+    catch (error) {
+        return rejectWithValue(error.response?.data || error.message);
+    }
+    }
+)
+
 const authSlice = createSlice({
     name: "auth",
     initialState: {
@@ -427,8 +443,19 @@ const authSlice = createSlice({
             .addCase(rotateTask.rejected, (state, { payload }) => {
                 state.isLoading = false;
                 state.error = payload;
-            });
-
+            })
+            .addCase(changeProfile.pending, (state, { payload }) => {
+                state.isLoading = true;
+        })
+            .addCase(changeProfile.fulfilled, (state, { payload }) => {
+                state.isLoading = false;
+                if (payload.newName) state.user.username = payload.newName;
+                if (payload.newEmail) state.user.email = payload.newEmail;
+            })
+            .addCase(changeProfile.rejected, (state, { payload }) => {
+                state.isLoading = false;
+                state.error = payload?.message || payload || "Помилка оновлення профілю";
+            })
 
     }
 });

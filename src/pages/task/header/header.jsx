@@ -10,17 +10,18 @@ import {
     WPlus
 } from "../sidebar/create/styled";
 import Popup from "reactjs-popup";
-import {useState} from "react";
-import {addBoard} from "../../../redux/auth/slice";
+import { useState} from "react";
+import {changeProfile} from "../../../redux/auth/slice";
+import {MenuIcon} from "../styled";
 
 
-export const Header = () => {
-
+export const Header = ({toggleSidebar}) => {
     const user = useSelector(getUser)
     const [open, setOpen] = useState(false);
     const [name, setName] = useState(user.username);
     const [email, setEmail] = useState(user.email);
     const [password, setPassword] = useState('');
+
 
     const dispatch = useDispatch();
 
@@ -42,13 +43,15 @@ export const Header = () => {
         setPassword('');
 
     }
+
     const handleSubmit = (e,close) => {
         e.preventDefault();
-        dispatch(addBoard({}))
+        dispatch(changeProfile({newName:name,newEmail:email,newPass:password}))
         close()
     }
     return (
         <Container>
+            <MenuIcon onClick={toggleSidebar}/>
             <Text>Theme<Icon/></Text>
             <Popup  open={open} onClose={handleClose} trigger={<HeaderWrap>
                 <Name>{user.username}</Name>
