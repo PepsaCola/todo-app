@@ -5,6 +5,7 @@ import {LogIn} from "./pages/log-in/log-in";
 import {Task} from "./pages/task/task";
 import {useEffect} from "react";
 import {Columns} from "./pages/task/columns/columns";
+import {ThemeProvider} from "./providers/ThemeProvider";
 
 export const App = () => {
     const location = useLocation();
@@ -12,13 +13,15 @@ export const App = () => {
         console.log("Current route:", location.pathname);
     }, [location]);
   return (
-      <Routes>
-        <Route path="/" element={<Start/>} />
-        <Route path='/registration' element={<Registration/>} />
-        <Route path='/log-in' element={<LogIn/>} />
-        <Route path='/tasks' element={<Task/>}>
-            <Route path=':boardId' element={<Columns/>} />
-        </Route>
-      </Routes>
+      <ThemeProvider>
+          <Routes>
+              <Route path="/" element={<Start/>} />
+              <Route path='/registration' element={<Registration/>} />
+              <Route path='/log-in' element={<LogIn/>} />
+              <Route path='/tasks' element={<Task/>}>
+                  <Route path=':boardId' element={<Columns/>} />
+              </Route>
+          </Routes>
+      </ThemeProvider>
   )
 }

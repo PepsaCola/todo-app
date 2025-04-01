@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  color: white;
+
 }
 body {
   margin: 0;
@@ -11,7 +11,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #1F1F1F;
+  background-color: var(--body-background-color);
+
 }
 
 code {
@@ -19,5 +20,184 @@ code {
     monospace;
 }
 
+.dark{
+  --logo-background-color: #1F1F1F;
+  --logo-icon-color: white;
 
+  --body-background-color: #1F1F1F;
+
+  --sidebar-background-color: #121212;
+  --sidebar-text-color: white;
+  --sidebar-help-background-color: #1F1F1F;
+  --sidebar-board-text-color: rgba(255, 255, 255, 0.50);
+  --sidebar-board-checked-background-color: #1F1F1F;
+  --sidebar-board-checked-text-color: white;
+  --sidebar-board-right-color: #BEDBB0;
+  --sidebar-create-border: rgba(255, 255, 255, 0.1) 1px solid;
+  --sidebar-create-title: rgba(255, 255, 255, 0.50);
+  --sidebar-icon-color: rgba(255, 255, 255, 0.50);
+
+  --sidebar-btn-background-color: #BEDBB0;
+  --sidebar-btn-plus:#121212;
+
+  --header-background-color: #161616;
+  --header-text-color: white;
+
+  --tasks-background-color: #121212;
+  --tasks-text-color: white;
+  --tasks-description-color: rgba(255, 255, 255, 0.50);
+  --tasks-border-color: rgba(255, 255, 255, 0.10);
+  --tasks-border-left-color: rgba(255, 255, 255, 0.30);
+  --tasks-span-color: rgba(255, 255, 255, 0.50);
+  --task-icon-color: rgba(255, 255, 255, 0.50);
+
+  --icon-hover-color: #BEDBB0;
+  --icons-color: rgba(255, 255, 255, 0.50);
+  --icons-boards-cheched-color: white;
+  --icons-checked-background-color: rgba(255, 255, 255, 0.10);
+
+  --pop-up-background-color: #151515;
+  --pop-up-option-shado: rgba(255, 255, 255, 0.80);
+
+  --calendar-background-color: #151515;
+  --calender-checked-background-color: #BEDBB0;
+  --calendar-current-month-text-color: white;
+  --calendar-not-month-color: rgba(255, 255, 255, 0.20);
+  --calendar-weeks-text-color: rgba(255, 255, 255, 0.50);
+  --calendar-border-color: rgba(255, 255, 255, 0.20);
+  --calendar-outside-border-color:#BEDBB0;
+  --calender-now-color: #1F1F1F;
+  --calendar-now: rgba(190, 219, 176, 0.5);
+
+  --btn-text-color: #161616;
+  --btn-background-color: #BEDBB0;
+  --btn-plus-background-color: #161616;
+  --btn-plus:white;
+
+  --logout-icon-color: #BEDBB0;
+  --logout-icon-hover-color:#9DC888;
+
+  --scrollbar-color:#121212;
+  --scrollbar-background-color: rgba(255, 255, 255, 0.1);
+}
+.light{
+  --logo-background-color: #1F1F1F;
+  --logo-icon-color: white;
+
+  --body-background-color: #F6F6F7;
+
+  --sidebar-background-color: #FFFFFF;
+  --sidebar-text-color: #161616;
+  --sidebar-help-background-color: #F6F6F7;
+  --sidebar-board-text-color: rgba(22, 22, 22, 0.50);
+  --sidebar-board-checked-background-color: #F6F6F7;
+  --sidebar-board-checked-text-color: #161616;
+  --sidebar-board-right-color: #BEDBB0;
+  --sidebar-create-border: rgba(22, 22, 22, 0.10) 1px solid;
+  --sidebar-create-title: rgba(22, 22, 22, 0.50);
+  --sidebar-icon-color: rgba(22, 22, 22, 0.50);
+
+  --sidebar-btn-background-color: #BEDBB0;
+  --sidebar-btn-plus:#121212;
+
+  --header-background-color: #FCFCFC;
+  --header-text-color: #161616;
+
+  --tasks-background-color: white;
+  --tasks-text-color: #161616;
+  --tasks-description-color: rgba(22, 22, 22, 0.70);
+  --tasks-border-color: rgba(22, 22, 22, 0.10);
+  --tasks-border-left-color: rgba(22, 22, 22, 0.30);
+  --tasks-span-color: rgba(22, 22, 22, 0.50);
+  --task-icon-color: rgba(22, 22, 22, 0.50);
+
+  --icon-hover-color: #BEDBB0;
+  --icons-color: rgba(22, 22, 22, 0.50);
+  --icons-boards-cheched-color: #161616;
+  --icons-checked-background-color: rgba(22, 22, 22, 0.10);
+
+  --pop-up-background-color: #FCFCFC;
+  --pop-up-option-shadow: rgba(0, 0, 0, 0.5);
+
+  --calendar-background-color: white;
+  --calendar-now: rgba(190, 219, 176, 0.5);
+  --calender-checked-background-color: #BEDBB0;
+  --calendar-current-month-text-color: #161616;
+  --calendar-not-month-color: rgba(22, 22, 22, 0.20);
+  --calendar-weeks-text-color: rgba(22, 22, 22, 0.50);
+  --calendar-border-color: rgba(22, 22, 22, 0.20);
+  --calendar-outside-border-color:#BEDBB0;
+  --calender-now-color: #161616;
+
+  --btn-text-color: #161616;
+  --btn-background-color: #BEDBB0;
+  --btn-plus-background-color: #161616;
+  --btn-plus:white;
+
+  --logout-icon-color: #BEDBB0;
+  --logout-icon-hover-color:#9DC888;
+
+  --scrollbar-color:rgba(22, 22, 22, 0.10);
+  --scrollbar-background-color: #E8E8E8;
+}
+.violet{
+  --logo-background-color: #ECEDFD;
+  --logo-icon-color: #5255BC;
+
+  --body-background-color: #ECEDFD;
+
+  --sidebar-background-color: #5255BC;
+  --sidebar-text-color: white;
+  --sidebar-help-background-color: rgba(236, 237, 253, 0.40);
+  --sidebar-board-text-color: rgba(255, 255, 255, 0.50);
+  --sidebar-board-checked-background-color: rgba(255, 255, 255, 0.50);
+  --sidebar-board-checked-text-color: white;
+  --sidebar-board-right-color: white;
+  --sidebar-create-border: rgba(255, 255, 255, 0.10) 1px solid;
+  --sidebar-create-title: white;
+  --sidebar-icon-color: rgba(255, 255, 255, 0.50);
+
+  --sidebar-btn-background-color: #B8BCFD;
+  --sidebar-btn-plus:white;
+
+  --header-background-color: white;
+  --header-text-color: #161616;
+
+  --tasks-background-color: white;
+  --tasks-text-color: #161616;
+  --tasks-description-color: rgba(22, 22, 22, 0.70);
+  --tasks-border-color: rgba(22, 22, 22, 0.10);
+  --tasks-border-left-color: rgba(22, 22, 22, 0.30);
+  --tasks-span-color: rgba(22, 22, 22, 0.50);
+  --task-icon-color: rgba(22, 22, 22, 0.50);
+
+  --icon-hover-color: #5255BC;
+  --icons-color: rgba(22, 22, 22, 0.50);
+  --icons-boards-cheched-color: #161616;
+  --icons-checked-background-color: rgba(22, 22, 22, 0.10);
+
+  --pop-up-background-color: #FCFCFC;
+  --pop-up-option-shadow: rgba(0, 0, 0, 0.5);
+
+  --calendar-now: rgba(82, 85, 188, 0.5);
+  --calender-checked-background-color: #5255BC;
+  --calendar-background-color: white;
+  --calendar-current-month-text-color: #161616;
+  --calendar-not-month-color: rgba(22, 22, 22, 0.20);
+  --calendar-weeks-text-color: rgba(22, 22, 22, 0.50);
+  --calendar-border-color: rgba(22, 22, 22, 0.20);
+  --calendar-outside-border-color: #5255BC;
+  --calender-now-color: #161616;
+
+  --btn-text-color: white;
+  --btn-background-color: #5255BC;
+  --btn-plus-background-color: white;
+  --btn-plus:#161616;
+
+  --logout-icon-color: white;
+  --logout-icon-hover-color:#B8BCFD;
+
+  --scrollbar-color:#B8BCFD;
+  --scrollbar-background-color: white;
+}
 

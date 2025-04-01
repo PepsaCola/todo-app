@@ -6,7 +6,7 @@ import {
     DeadlineWrap,
     DeleteIcon,
     Description,
-    IconsWrap,
+    IconsWrap, PopReplaceIcon,
     Priority,
     PriorityWrap,
     ReplaceIcon,
@@ -61,8 +61,8 @@ export const Box = ({ item, column, board }) => {
                                     .filter((col) => col.id !== column.id) // Фільтруємо, щоб не включати поточну колонку
                                     .map((col) => (
                                         <ReplText onClick={() => handleClick(col.id)} key={col.id}>
-                                            {col.name} <ReplaceIcon />
-                                        </ReplText> // Виводимо назви інших колонок
+                                            {col.name} <PopReplaceIcon />
+                                        </ReplText>
                                     ))}
                             </CreatePopup>
                         </Back>

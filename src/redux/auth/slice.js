@@ -3,6 +3,7 @@ import axios from "axios";
 import uniqid from "uniqid";
 
 const API_URL = 'https://to-do-server-xi.vercel.app';
+// const API_URL = 'http://localhost:3000';
 
 const accessToken = localStorage.getItem("access_token");
 
@@ -217,9 +218,14 @@ const authSlice = createSlice({
         user: null,
         isLoading: false,
         error: null,
-        filter:''
+        filter:'',
+        theme:'dark'
     },
     reducers: {
+        setTheme: (state, action) => {
+            state.theme = action.payload;
+            console.log(action.payload);
+        },
         setFilter: (state, action) => {
           state.filter = action.payload;
         },
@@ -460,5 +466,5 @@ const authSlice = createSlice({
     }
 });
 
-export const { logout,setFilter } = authSlice.actions;
+export const { logout,setFilter,setTheme } = authSlice.actions;
 export const authReducer =  authSlice.reducer;

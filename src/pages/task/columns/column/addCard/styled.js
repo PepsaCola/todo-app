@@ -3,22 +3,21 @@ import styled from "styled-components";
 export const InpDescription = styled.textarea`
     outline: none;
     padding: 14px 18px;
-    background: #1F1F1F;
     box-shadow: 0 4px 16px rgba(22, 22, 22, 0.08);
     border-radius: 8px;
+    background-color: transparent;
     overflow: hidden;
     border: 1px #BEDBB0 solid;
     font-size: 14px;
-    color: white;
+    color: var(--tasks-text-color);
     resize: none;
     height: 154px;
     box-sizing: border-box;
     opacity: ${({ value }) => (value ? "1" : "0.4")};
     font-family: 'Poppins', sans-serif;
     &::placeholder {
-        color: white;
-        font-size: 14px;
-        font-family: 'Poppins', sans-serif;
+        color: var(--tasks-text-color);
+        
     }
     &:focus {
         opacity: 1;
@@ -30,7 +29,7 @@ const getColor = (value) => {
         case "Low": return "#8FA1D0";
         case "Medium": return "#E09CB5";
         case "High": return "#BEDBB0";
-        case "Without": return "rgba(255, 255, 255, 0.30)";
+        case "Without": return "var(--tasks-border-left-color)";
         default: return "transparent";
     }
 };
@@ -46,8 +45,8 @@ export const ColorOption = styled.input.attrs({ type: "radio" })`
     background-color: ${({ value }) => getColor(value)};
 
     &:checked {
-        border: 2px solid white;
-        box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+        border: 2px solid ${({ value }) => getColor(value)};
+        box-shadow: 0 0 5px var(--pop-up-option-shadow);
     }
 `;
 
@@ -60,7 +59,7 @@ export const LabelContainer = styled.div`
 `;
 
 export const LabelText = styled.span`
-  color: rgba(255, 255, 255, 0.50);
+  color:var(--tasks-span-color);
   font-size: 14px;
 `;
 

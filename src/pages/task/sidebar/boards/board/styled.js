@@ -8,25 +8,26 @@ export const Icon = styled(MainIcon)`
     width: 16px;
     height: 16px;
 `
-export const NameWrap = styled.div`
+export const NameWrap = styled(Link)`
     width: 100%;
     display: flex;
     align-items: center;
     gap: 8px;
+    text-decoration: none;
 `
 export const Container = styled.div`
     padding: 24px;
-    background: ${({ checked }) => (checked ? "#1F1F1F" : "transparent")};
+    background: ${({ checked }) => (checked ? "var(--sidebar-board-checked-background-color)" : "transparent")};
     display: flex;
     justify-content: space-between;
-    border-right: ${({ checked }) => (checked ? "#BEDBB0 4px solid" : "transparent 4px solid")};
+    border-right: ${({ checked }) => (checked ? "var(--sidebar-board-right-color) 4px solid" : "transparent 4px solid")};
     gap: 20px;
 `
-export const Text = styled(Link)`
+export const Text = styled.p`
     width: 120px;
     opacity: ${({ checked }) => (checked ? 1 : 0.50)};
     font-weight: 500;
-    text-decoration: none;
+    color: ${({ checked }) => (checked ? "var(--sidebar-board-checked-text-color)" : "var(--sidebar-text-color)")};
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 1; /* Обмежуємо до 2 рядків */
@@ -50,12 +51,12 @@ export const PenIcon = styled(PIcon)`
     height: 16px;
 
     path {
-        stroke: rgba(255, 255, 255, 0.50);
+        stroke: var(--sidebar-icon-color);
     }
 
     &:hover {
         path {
-            stroke: #BEDBB0;
+            stroke: var(--icon-hover-color);
             transition: stroke 0.3s;
         }
     };
@@ -65,12 +66,12 @@ export const DeleteIcon = styled(DIcon)`
     height: 16px;
 
     path {
-        stroke: rgba(255, 255, 255, 0.50);
+        stroke: var(--sidebar-icon-color);
     }
 
     &:hover {
         path {
-            stroke: #BEDBB0;
+            stroke: var(--icon-hover-color);
             transition: stroke 0.3s;
         }
     };

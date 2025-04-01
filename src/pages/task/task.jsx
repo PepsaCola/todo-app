@@ -62,8 +62,8 @@ export const Task = () => {
 
     const handleLogout = () => {
        dispatch(logout())
-        // dispatch(logoutApp())
-        navigate("/"); // Переход на главную после выхода
+
+        navigate("/");
     };
 
     const handlePriorityChange = (e) => {

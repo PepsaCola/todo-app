@@ -11,10 +11,8 @@ const priorityColors = {
 };
 
 export const Container = styled.li`
-    background-color: #121212;
-    border-left: ${({ priority }) => priorityColors[priority] || "3px solid rgba(255, 255, 255, 0.30)"};
-
-    color: #fff;
+    background-color: var(--tasks-background-color);
+    border-left: ${({ priority }) => priorityColors[priority] || "4px solid var(--tasks-border-left-color)"};
     box-sizing: border-box;
     padding: 14px 20px;
     border-radius: 8px;
@@ -28,6 +26,7 @@ export const Container = styled.li`
 `;
 
 export const Title = styled.h3`
+    color: var(--tasks-text-color);
     font-size: 14px;
   font-weight: bold;
     overflow: hidden;
@@ -39,7 +38,7 @@ export const Title = styled.h3`
 
 export const Description = styled.p`
     font-size: 12px;
-  color: #b0b0b0;
+  color: var(--tasks-description-color);
   margin: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -50,7 +49,7 @@ export const Description = styled.p`
 
 export const BoxWrap = styled.div`
     display: flex;
-    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    border-top: 1px solid var(--tasks-border-color);
     padding-top: 14px;
     gap: 14px;
 `
@@ -64,7 +63,7 @@ export const Priority = styled.p`
     display: flex;
     align-items: center;
     font-size: 10px;
-
+    color: var(--tasks-text-color);
     &::before {
         content: "";
         display: block;
@@ -74,7 +73,7 @@ export const Priority = styled.p`
         margin-right: 6px;
         background-color: ${({ priority }) =>
                 priority === "Without priority"
-                        ? "rgba(255, 255, 255, 0.30)"
+                        ? "var(--tasks-border-left-color)"
                         : priority === "Low"
                                 ? "#8FA1D0"
                                 : priority === "Medium"
@@ -87,7 +86,7 @@ export const Priority = styled.p`
 
 
 export const Span = styled.span`
-color:rgba(255, 255, 255, 0.50);
+color:var(--tasks-description-color);
     font-size: 8px;
     display: block;
     margin-bottom: 4px;
@@ -97,6 +96,7 @@ export const Deadline = styled.p`
     display: flex;
     flex-direction: column;
     font-size: 10px;
+    color: var(--tasks-text-color);
 `;
 
 export const IconsWrap = styled.div`
@@ -122,18 +122,33 @@ export const ReplaceIcon = styled(RIcon)`
 width: 16px;
     height: 16px;
     path {
-        stroke: rgba(255, 255, 255, 0.50);
+        stroke: var(--icons-color);
     }
 
     &:hover {
         path {
-            stroke: #BEDBB0;
+            stroke: var(--icon-hover-color);
             transition: stroke 0.3s;
         }
     }
 
     
 `;
+
+export const PopReplaceIcon = styled(RIcon)`
+    width: 16px;
+    height: 16px;
+    path {
+        stroke: var(--tasks-text-color);
+    }
+
+    &:hover {
+        path {
+            stroke: var(--icon-hover-color);
+            transition: stroke 0.3s;
+        }
+    }
+`
 
 export const ReplText = styled.button`
     background-color: transparent;
@@ -144,11 +159,11 @@ export const ReplText = styled.button`
     gap: 8px;
     font-size: 14px;
     cursor: pointer;
-    color: rgba(255, 255, 255, 0.50);
+    color: var(--tasks-text-color);
     
     &:hover {
         color: #BEDBB0;
-        & ${ReplaceIcon} {
+        & ${PopReplaceIcon} {
             path {
                 stroke: #BEDBB0;
                 transition: stroke 0.3s;
@@ -159,12 +174,12 @@ export const ReplText = styled.button`
 `
 
 export const CreatePopup= styled.div`
-    background-color: #151515;
+    background-color: var(--pop-up-background-color);
     padding: 24px;
     display: flex;
     flex-direction: column;
     border-radius: 8px;
-    color: white;
+    color: var(--tasks-text-color);
     position: relative;
     gap:8px; 
 `
@@ -172,21 +187,21 @@ export const CreatePopup= styled.div`
 
 export const DeleteIcon = styled(DIcon)`
     path {
-        stroke: rgba(255, 255, 255, 0.50);
+        stroke: var(--icons-color);
     }
     &:hover {
             path {
-                stroke: #BEDBB0;
+                stroke: var(--icon-hover-color);
                 transition: stroke 0.3s;
             }
     }`;
 export const PenIcon = styled(PIcon)`
     path {
-        stroke: rgba(255, 255, 255, 0.50);
+        stroke: var(--icons-color);
     }
     &:hover {
             path {
-                stroke: #BEDBB0;
+                stroke: var(--icon-hover-color);
                 transition: stroke 0.3s;
             }
     }

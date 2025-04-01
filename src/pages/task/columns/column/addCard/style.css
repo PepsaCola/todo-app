@@ -6,13 +6,11 @@
     font-size: 14px;
     cursor: pointer;
     display: block;
-    color: #BEDBB0;
+    color: var(--calender-checked-background-color);
     background-color: transparent;
     border: none;
 }
 .custom-calendar {
-
-
     border-radius: 10px;
     padding: 10px;
     border: none;
@@ -22,8 +20,8 @@
 
 .react-calendar{
     width: 254px;
-    background-color: #1F1F1F;
-    border: 1px solid #BEDBB0;
+    background-color: var(--calendar-background-color);
+    border: 1px solid var(--calendar-outside-border-color);
 }
 .react-calendar__navigation{
     display: flex;
@@ -32,13 +30,14 @@
     padding: 5px 10px;
 
     :hover{
-        color: #BEDBB0;
+        color: var(--calender-checked-background-color);
     }
 }
 .react-calendar__month-view__days{
+
 }
 .react-calendar__navigation button{
-    color: white;
+    color: var(--calendar-current-month-text-color);
     padding: 5px;
     cursor: pointer;
     border: none;
@@ -51,14 +50,13 @@
 }
 .react-calendar__month-view__weekdays__weekday abbr{
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.50);
+    color: var(--calendar-weeks-text-color);
     font-size: 14px;
     font-weight: 500;
 }
 .react-calendar__tile {
     background: transparent;
     cursor: pointer;
-
     border-radius: 50px;
     border: none;
     box-sizing: border-box;
@@ -71,20 +69,34 @@
 }
 .react-calendar__tile button{
     :hover{
-        background-color: #BEDBB0;
+        background-color: var(--calender-checked-background-color);
     }
 }
 .react-calendar__tile--now {
-    background-color: rgba(190, 219, 176, 0.5);
+    color:var(--calender-now-color);
+    background-color: var(--calendar-now);
     & abbr{
-        color: #1F1F1F;
+        color: var(--calender-now-color);
     }
 
 }
 
 .react-calendar__month-view__days__day--neighboringMonth abbr{
-    color: rgba(255, 255, 255, 0.20) ;
+    color: var(--calendar-not-month-color) ;
 }
+.react-calendar__month-view__days__day{
+    color: var(--calendar-current-month-text-color);
+}
+.react-calendar__year-view__months__month{
+    color: var(--calendar-current-month-text-color);
+}
+.react-calendar__decade-view__years__year{
+    color: var(--calendar-current-month-text-color);
+}
+.react-calendar__century-view__decades__decade{
+    color: var(--calendar-current-month-text-color);
+}
+
 .react-calendar__month-view__days{
     display: flex;
     margin-top: 11px;
@@ -94,9 +106,9 @@
 }
 
 .react-calendar__tile--active {
-    background: #BEDBB0;
+    background: var(--calender-checked-background-color);
     & abbr{
-        color: #1F1F1F;
+        color: var(--calender-now-color);
     }
 
 }

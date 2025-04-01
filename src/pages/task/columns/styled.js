@@ -7,8 +7,8 @@ export const List = styled.ul`
     display: flex;
     gap: 18px;
     flex-grow: 1;
-    width: 100%; /* Або конкретне значення, наприклад 1600px */
-    scrollbar-color: #121212 rgba(255, 255, 255, 0.1);
+    width: 100%;
+    scrollbar-color: var(--scrollbar-color) var(--scrollbar-background-color);
     scrollbar-width: thin;
 `;
 export const ListItem = styled.li`
@@ -23,16 +23,20 @@ export const Btn = styled.button`
     align-items: center;
     gap: 8px;
     min-width: 334px;
-    background-color: #121212;
+    background-color: var(--tasks-background-color);
+    color: var(--tasks-text-color);
     padding: 13.5px 79px;
     border: none;
     box-sizing: border-box;
 `
 export const Icon = styled(PIcon)`
     display: inline-block;
-background-color: white;
+background-color: var(--tasks-text-color);
 padding: 7px;
     width: 14px;
     height: 14px;
     border-radius: 8px;
+    path{
+        stroke: var(--tasks-background-color);
+    }
 `

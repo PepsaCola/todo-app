@@ -1,7 +1,8 @@
-import {Button, Container, HeaderWrap, Icon, IconP, Img, Inp, Name, PopImg, Text, Wrap} from "./styled";
+import {Button, Container, HeaderWrap, IconP, Img, Inp, Name, PopImg, Wrap} from "./styled";
 import {useDispatch, useSelector} from "react-redux";
-import {getUser} from "../../../redux/auth/selectors";
-import img from "../../../img/user.png";
+import {getTheme, getUser} from "../../../redux/auth/selectors";
+import imgD from "../../../img/user.png";
+import imgL from "../../../img/user-l.png";
 import {
     Back,
     CloseButton, CreateButton,
@@ -13,6 +14,7 @@ import Popup from "reactjs-popup";
 import { useState} from "react";
 import {changeProfile} from "../../../redux/auth/slice";
 import {MenuIcon} from "../styled";
+import {Theme} from "./theme";
 
 
 export const Header = ({toggleSidebar}) => {
@@ -22,7 +24,7 @@ export const Header = ({toggleSidebar}) => {
     const [email, setEmail] = useState(user.email);
     const [password, setPassword] = useState('');
 
-
+    const theme = useSelector(getTheme);
     const dispatch = useDispatch();
 
     const handleNameChange = (e) => {
@@ -50,12 +52,12 @@ export const Header = ({toggleSidebar}) => {
         close()
     }
     return (
-        <Container>
+        <Container >
             <MenuIcon onClick={toggleSidebar}/>
-            <Text>Theme<Icon/></Text>
+            <Theme/>
             <Popup  open={open} onClose={handleClose} trigger={<HeaderWrap>
                 <Name>{user.username}</Name>
-                <Img src={user.avatar?user.avatar: img}/>
+                <Img src={user.avatar?user.avatar: theme==='dark'?imgD:imgL}/>
             </HeaderWrap>} position="right top" modal>
                 {(close) => (
                     <Back onClick={close}>
@@ -63,7 +65,7 @@ export const Header = ({toggleSidebar}) => {
                             <CloseButton onClick={close} type='button'>&times;</CloseButton>
                             <H3>Edit  profile</H3>
                             <Wrap>
-                                <PopImg src={user.avatar?user.avatar: img}/>
+                                <PopImg src={user.avatar?user.avatar: theme==='dark'?imgD:imgL}/>
                                 <Button><IconP/></Button>
                             </Wrap>
 

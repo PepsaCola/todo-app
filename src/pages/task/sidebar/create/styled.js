@@ -11,21 +11,22 @@ import { ReactComponent as Icon7 } from "../../../../img/boardIcons/icon-7.svg";
 import { ReactComponent as Icon8 } from "../../../../img/boardIcons/icon-8.svg";
 
 export const Container = styled.div`
-display: flex;
+    display: flex;
     justify-content: space-between;
-    border-top:rgba(255, 255, 255, 0.10) 1px solid; 
-    border-bottom:rgba(255, 255, 255, 0.10) 1px solid; 
+    border-top: var(--sidebar-create-border);
+    border-bottom: var(--sidebar-create-border);
     padding: 14px 0;
     margin-top: 8px;
 `
 export const Text = styled.p`
+    color: var(--sidebar-text-color);
     width: 76px;
     font-size: 14px; 
     font-weight: 500;
 `
 export const Button = styled.button`
     cursor: pointer;
-    background-color: #BEDBB0;
+    background-color: var(--sidebar-btn-background-color);
     border-radius: 10px;
     border: none;
     padding: 8px 10px;
@@ -35,6 +36,9 @@ export const Icon = styled(Plus)`
     display: block;
     width: 20px;
     height: 20px;
+    path{
+        stroke: var(--sidebar-btn-plus);
+    }
 `
 
 export const H3 = styled.h3``
@@ -47,26 +51,42 @@ export const Label = styled.label`
     justify-content: center;
     padding: 6px;
     border-radius: 6px;
-    &:has(input:checked) {
-        background-color: #2a2a2a;
-        fill: white;
+    & svg{
+        path{
+            stroke: var(--icons-color);
+        }
     }
+    &:has(input:checked){
+        background-color: var(--icons-checked-background-color);
+        svg{
+            path{
+                stroke: var(--icons-boards-cheched-color);
+            }
+        }
+    } 
+    &:hover{
+        svg{
+            path{
+                stroke: var(--icons-boards-cheched-color);
+            }
+        }
+    } 
 `
 
 export const InpTitle = styled.input`
     outline: none;
     padding: 14px 18px;
-    background: #1F1F1F;
+    background-color: transparent;
     box-shadow: 0 4px 16px rgba(22, 22, 22, 0.08);
     border-radius: 8px;
     overflow: hidden;
     border: 1px #BEDBB0 solid;
     font-size: 14px;
-    color: white;
+    color: var(--tabs-text-color);
     opacity: ${({ value }) => (value ? "1" : "0.4")};
     &::placeholder {
-        color: white;
-        font-size: 14px;
+        color: var(--tabs-text-color);;
+        
     }
     &:focus {
         opacity: 1;
@@ -94,13 +114,13 @@ export const Back = styled.div`
 `
 
 export const CreatePopup= styled.form`
-    background-color: #151515;
+    background-color: var(--pop-up-background-color);
     padding: 24px;
     width: 350px;
     display: flex;
     flex-direction: column;
     border-radius: 8px;
-    color: white;
+    color: var(--tasks-text-color);
     position: relative;
     gap:24px; 
 `
@@ -125,7 +145,7 @@ export const CloseButton = styled.button`
   background: none;
   border: none;
   font-size: 24px;
-  color: white;
+  color: var(--tabs-text-color);
   cursor: pointer;
 `;
 

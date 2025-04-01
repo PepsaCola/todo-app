@@ -61,7 +61,7 @@ export const Create = ()=>{
                         <CreatePopup onClick={(e) => e.stopPropagation()}>
                             <CloseButton onClick={close} type='button'>&times;</CloseButton>
                             <H3>New board</H3>
-                            <InpTitle onChange={handleTitleChange} type="text" name="title" placeholder='Title' value={title}/>
+                            <InpTitle onChange={handleTitleChange} type="text" name="title" placeholder='Title' value={title} minLength={1} maxLength={50}/>
 
                             <Wrap>
                                 <H4>Icons</H4>

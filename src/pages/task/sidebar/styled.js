@@ -7,7 +7,7 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: space-between;
     max-width: 260px;
-    background-color: #121212;
+    background-color: var(--sidebar-background-color);
     box-sizing: border-box;
     position: absolute;
     z-index: 10;
@@ -53,6 +53,7 @@ export const Back = styled.div`
 `
 
 export const Title = styled.h2`
+    color: var(--sidebar-text-color);
     font-size: 16px;
 display: flex;
     gap: 8px;
@@ -61,18 +62,23 @@ display: flex;
 export const Icon = styled(StartIcon)`
     width: 12px;
     height: 16px;
-background-color: #1F1F1F;
+background-color: var(--logo-background-color);
     padding: 8px 10px;
     border-radius: 10px;
+    path{
+        stroke: var(--logo-icon-color);
+        fill: var(--logo-icon-color);
+    }
 `
 export const H3 = styled.h3`
-    color: rgba(255, 255, 255, 0.50);
+    color: var(--sidebar-create-title);
     font-size: 12px;
     font-weight: 400;
-margin-top: 60px;
+    margin-top: 60px;
 `
 export const Button = styled.button`
     display: flex;
+    color: var(--sidebar-text-color);
     gap: 14px;
     align-items: center;
     font-size: 16px;
@@ -80,19 +86,21 @@ background-color: transparent;
     border: none;
 margin-top: 24px;
     cursor: pointer;
+    font-weight: 500;
     &:hover svg {
         path {
-            stroke: #9DC888;
+            stroke: var(--logout-icon-hover-color);
             transition: stroke 0.3s;
         }
     }
 `
 export const LogOutIcon = styled(LogIcon)`
-    
 width: 32px;
     height: 32px;
     display: block;
-    
+    path{
+        stroke: var(--logout-icon-color);
+    }
 `
 
 export const TopDiv = styled.div`

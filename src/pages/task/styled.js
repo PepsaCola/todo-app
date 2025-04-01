@@ -41,6 +41,9 @@ export const MenuIcon = styled(MIcon)`
     height: 32px;
     margin-right: auto;
     cursor: pointer;
+    path{
+        stroke: var(--header-text-color);
+    }
     @media screen and (min-width: 1440px){
         display: none;
     }
@@ -66,7 +69,7 @@ export const ColumnsWrap = styled.div`
     
     display: flex;
     flex-direction: column;
-    background-color: #1F1F1F; /* Базовий фон */
+    background-color: var(--body-background-color); 
     background-image: ${({ back }) => (back ? `url(${back})` : 'none')};
     background-size: cover;
     background-position: center;
@@ -83,13 +86,15 @@ justify-content: space-between;
 `
 export const Title = styled.h3`
     font-size: 18px;
+    color: var(--tasks-text-color);
 `
 export const Filter = styled.p`
     cursor: pointer;
 display: flex;
     gap: 8px;
     align-items: center;
-    color: rgba(255, 255, 255, 0.80);
+    color: var(--tasks-text-color);
+    opacity: 0.8;
     font-size: 14px;
 `
 export const Label = styled.label`
@@ -128,4 +133,8 @@ export const Message = styled.p``
 export const Icon = styled(FIcon)`
     width: 16px;
     height: 16px;
+    path{
+        stroke: var(--tasks-text-color);
+        stroke-opacity: 0.8;
+    }
 `

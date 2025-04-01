@@ -18,27 +18,27 @@ import icons, {
 } from "../../create/styled";
 import images from "../../create/boardPhoto";
 import Popup from "reactjs-popup";
-import { useState, useEffect } from "react"; // Додано useEffect
+import { useState, useEffect } from "react";
 import { changeBoard, deleteBoard } from "../../../../../redux/auth/slice";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
 export const Board = ({ item, checked, onSelect }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const [open, setOpen] = useState(false);
-    const [title, setTitle] = useState(item.name); // Початкове значення з item
-    const [selectedIcon, setSelectedIcon] = useState(item.icon); // Початкове значення з item
-    const [selectedImg, setSelectedImg] = useState(item.img); // Початкове значення з item
+    const [title, setTitle] = useState(item.name);
+    const [selectedIcon, setSelectedIcon] = useState(item.icon);
+    const [selectedImg, setSelectedImg] = useState(item.img);
 
-    // Синхронізація стану з пропсами при відкритті модального вікна
     useEffect(() => {
         if (open) {
             setTitle(item.name);
             setSelectedIcon(item.icon);
             setSelectedImg(item.img);
         }
-    }, [open, item.name, item.icon, item.img]); // Залежності: open і значення з item
+    }, [open, item.name, item.icon, item.img]);
 
     const handleTitleChange = (e) => {
         setTitle(e.target.value);
@@ -54,7 +54,7 @@ export const Board = ({ item, checked, onSelect }) => {
 
     const handleClose = () => {
         setOpen(false);
-        // Більше не скидаємо вручну до item, бо це робить useEffect при відкритті
+
     };
 
     const handleSubmit = (e, close) => {
@@ -70,12 +70,18 @@ export const Board = ({ item, checked, onSelect }) => {
 
     const iconIndex = parseInt(item.icon?.split('-')[1]) || 0;
     const SelectedIcon = icons[iconIndex];
+    const StyledIcon = styled(SelectedIcon)`
+        path {
+            stroke: ${({ checked }) => (checked ? "var(--sidebar-board-checked-text-color)" : "var(--sidebar-board-text-color)")};
+            stroke-opacity: ${({ checked }) => (checked ? "1" : "0.5")};
+        }
+    `;
 
     return (
         <Container checked={checked}>
-            <NameWrap>
-                <SelectedIcon />
-                <Text checked={checked} to={item.id} onClick={onSelect}>
+            <NameWrap to={item.id} onClick={onSelect}>
+                <StyledIcon checked={checked} />
+                <Text checked={checked}  >
                 {item.name}
                 </Text>
             </NameWrap>
@@ -101,6 +107,8 @@ export const Board = ({ item, checked, onSelect }) => {
                                         name="title"
                                         placeholder="Title"
                                         value={title}
+                                        minLength={1}
+                                        maxLength={50}
                                     />
 
                                     <Wrap>

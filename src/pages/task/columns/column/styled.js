@@ -35,8 +35,8 @@ export const Btn = styled.button`
     justify-content: center;
     align-items: center;
     padding: 13.5px 89px;
-    color: #161616;
-    background-color: #BEDBB0;
+    color: var(--btn-text-color);
+    background-color: var(--btn-background-color);
     border: none;
     border-radius: 8px;
     box-sizing: border-box;
@@ -49,7 +49,7 @@ export const TitleWrap = styled.div`
     display: flex;
     justify-content: space-between;
     border-radius: 8px;
-    background: #121212;
+    background: var(--tasks-background-color);
 padding: 18px 24px;
 `
 
@@ -62,7 +62,7 @@ export const List = styled.ul`
     height: 100%;
 
     /* Firefox */
-    scrollbar-color: #121212 rgba(255, 255, 255, 0.1);
+    scrollbar-color: var(--scrollbar-color) var(--scrollbar-background-color);
     scrollbar-width: thin;
     /* WebKit (Chrome, Edge, Safari) */
 
@@ -89,19 +89,23 @@ export const List = styled.ul`
 `;
 
 export const Title = styled.h2`
+    color: var(--tasks-text-color);
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 1; /* Обмежуємо до 2 рядків */
+    -webkit-line-clamp: 1; 
     -webkit-box-orient: vertical;
     font-size: 14px;`
 
 export const Icon = styled(PlIcon)`
     width: 14px;
     height: 14px;
-    background: #161616;
+    background: var(--btn-plus-background-color);
     padding: 7px;
     border-radius: 8px;
+    path{
+        stroke: var(--btn-plus);
+    }
 `
 export const DeleteIcon = styled(DIcon)`
     path {

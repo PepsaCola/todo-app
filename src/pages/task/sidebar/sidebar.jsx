@@ -8,7 +8,7 @@ export const Sidebar = ({handleLogout,boards,isOpen,toggleSidebar }) => {
     return (
         <>
             <Back className={isOpen ? "active" : ""} onClick={toggleSidebar}/>
-            <Container className={isOpen ? "open" : ""}>
+            <Container className={`${isOpen ? "open" : ""}`}>
                 <TopDiv>
                     <Title>
                         <Icon/>
