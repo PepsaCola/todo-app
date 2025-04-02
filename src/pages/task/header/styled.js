@@ -116,7 +116,7 @@ export const Item = styled.p`
     font-size: 14px;
     cursor: pointer;
     &:hover {
-        color: #BEDBB0;
+        color: var(--theme-hover-text-color);
         
     }
 `

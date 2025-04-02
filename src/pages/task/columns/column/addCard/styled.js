@@ -7,7 +7,7 @@ export const InpDescription = styled.textarea`
     border-radius: 8px;
     background-color: transparent;
     overflow: hidden;
-    border: 1px #BEDBB0 solid;
+    border: 1px var(--input-border-color) solid;
     font-size: 14px;
     color: var(--tasks-text-color);
     resize: none;

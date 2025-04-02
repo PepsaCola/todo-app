@@ -80,7 +80,7 @@ export const InpTitle = styled.input`
     box-shadow: 0 4px 16px rgba(22, 22, 22, 0.08);
     border-radius: 8px;
     overflow: hidden;
-    border: 1px #BEDBB0 solid;
+    border: 1px var(--input-border-color) solid;
     font-size: 14px;
     color: var(--tabs-text-color);
     opacity: ${({ value }) => (value ? "1" : "0.4")};
@@ -150,8 +150,8 @@ export const CloseButton = styled.button`
 `;
 
 export const CreateButton = styled.button`
-  background: #b8d8a5;
-  color: #161616;
+  background: var(--btn-background-color);
+  color: var(--btn-text-color);
   font-size: 14px;
   font-weight: 500;
   padding: 12px;
@@ -169,8 +169,11 @@ export const WPlus =styled(PlusW)`
     width: 14px;
     height: 14px;
     padding: 7px;
-    background-color: #161616;
+    background-color: var(--btn-plus-background-color);
     border-radius: 6px;
+    path{
+        stroke: var(--btn-plus);
+    }
 `
 const IconQ = styled(Icon1)``
 const IconW = styled(Icon2)``

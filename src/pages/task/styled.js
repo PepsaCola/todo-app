@@ -103,7 +103,7 @@ display: flex;
     align-items: center;
     transition: 0.3s ease-in-out;
     cursor: pointer;
-    color: ${({ checked }) => checked ? 'white' : 'rgba(255, 255, 255, 0.50)'};
+    color: ${({ checked }) => checked ? 'var(--tasks-span-hover-color)' : 'var(--tasks-span-color)'};
 `
 export const LabelContainer = styled.div`
     display: flex;
@@ -111,7 +111,7 @@ export const LabelContainer = styled.div`
     gap: 8px;
 `
 export const LabelText = styled.p`
-    color: white; 
+    color: var(--tasks-text-color); 
     font-size: 14px; 
     font-weight: 500;
 `
@@ -120,16 +120,18 @@ export const LabelWrap = styled.div`
     justify-content: space-between;
 `
 export const LabelSpan = styled.span`
-    color: rgba(255, 255, 255, 0.50); 
+    color: var(--tasks-span-color); 
     font-size: 12px;
     text-decoration: underline;
     transition: 0.3s ease-in-out;
     cursor: pointer;
     &:hover {
-        color: white;
+        color: var(--tasks-span-hover-color);
     }
 `
-export const Message = styled.p``
+export const Message = styled.p`
+color: var(--tasks-text-color);
+`
 export const Icon = styled(FIcon)`
     width: 16px;
     height: 16px;
