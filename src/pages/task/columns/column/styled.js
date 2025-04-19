@@ -60,12 +60,10 @@ export const List = styled.ul`
     overflow-y: auto;
     flex-grow: 1;
     height: 100%;
-
-    /* Firefox */
+    
     scrollbar-color: var(--scrollbar-color) var(--scrollbar-background-color);
     scrollbar-width: thin;
-    /* WebKit (Chrome, Edge, Safari) */
-
+    
     ::-webkit-scrollbar {
         width: 8px;
     }
@@ -109,24 +107,24 @@ export const Icon = styled(PlIcon)`
 `
 export const DeleteIcon = styled(DIcon)`
     path {
-        stroke: rgba(255, 255, 255, 0.50);
+        stroke: var(--icons-color);
     }
 
     &:hover {
         path {
-            stroke: #BEDBB0;
+            stroke: var(--icon-hover-color);
             transition: stroke 0.3s;
         }
     };
 `;
 export const PenIcon = styled(PIcon)`
     path {
-        stroke: rgba(255, 255, 255, 0.50);
+        stroke: var(--icons-color);
     }
 
     &:hover {
         path {
-            stroke: #BEDBB0;
+            stroke: var(--icon-hover-color);
             transition: stroke 0.3s;
         }
     };

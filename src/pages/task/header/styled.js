@@ -92,7 +92,7 @@ export const Inp = styled.input`
 `
 
 export const Wrapper = styled.div`
-    position: relative; /* Щоб Popup позиціонувався відносно цього контейнера */
+    position: relative; 
     display: inline-block;
 `;
 
@@ -104,8 +104,8 @@ export const CreatePopup = styled.div`
     flex-direction: column;
     border-radius: 8px;
     
-    position: absolute; /* Абсолютне позиціонування */
-    top: 100%; /* Розміщуємо під кнопкою */
+    position: absolute; 
+    top: 100%; 
     left: 0;
     z-index: 1000;
     gap: 24px;
